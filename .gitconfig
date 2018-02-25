@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+#[user]
+#Please adapt and uncomment the following lines:
+#	name = Nimish Gupta
+#	email = nimishgupta18396@gmail.com
+[user]
+	name = Nimish
+	email = nimishgupta18396@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	bc = checkout -b
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	all = add -A
+	cm = commit -m 
+	ph = push origin HEAD
+	pl = pull origin HEAD
+	plo = pull origin
+	pho = push origin
+	pr = pull-request
