@@ -1,8 +1,6 @@
 source help.sh
 source utils.sh
 
-source git_config.sh
-
 OPTIND=1
 
 while getopts hs: opt; do
@@ -12,10 +10,11 @@ while getopts hs: opt; do
 			exit 0
 			;;
 		s)
-			setting_git_ssh $OPTARG
+      emailForSsh=$OPTARG
 			exit 0
 			;;
 		*)
+      echo "Invalid arguments are present"
 			show_help 
 			exit 1
 			;;
