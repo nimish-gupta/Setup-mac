@@ -10,13 +10,11 @@ beautify() {
 }
 
 check_app_insalled() {
-  echo "$1"
-  whichResult=$(which $1)
-  echo "$whichResult"
-  echo "$1 not found"
-  if [ "$whichResult" == "$1 not found" ]
+  isInstalled=$(brew ls --versions "$1")
+  if [ -z "$isInstalled" ]
   then
-    echo "not founs"
     beautify $1 $2
+  else
+    echo "$1 is already installed"
   fi
 }
