@@ -1,5 +1,5 @@
 # scripts
-These are general scripts to optimize the dev environment
+These are general scripts to be installed in  the dev environment for a increase in devlopment speed
 This scripts install the following apps in the mac:
   * xcode
   * brew
@@ -15,3 +15,19 @@ This scripts install the following apps in the mac:
   * nvm
   * zsh auto suggestions plugin
 
+
+### Before installation
+Add the executable permissions to the script
+`chmod +x scripts.sh`
+
+### Basic Usage
+To install the apps with default settings
+`./scripts.sh`
+
+### To install the apps with advanced Options
+`./scripts.sh [Options]`
+
+##### Options
+
+  * `-h  help`
+  * `-s <git-email>` to create the ssh for the git 
