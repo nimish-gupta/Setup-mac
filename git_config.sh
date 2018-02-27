@@ -12,7 +12,7 @@ setting_git_ssh() {
 install_git() {
 	# install git
 	git_command() {
-		brew install htop
+		brew install git
 	}
-	check_app_insalled "htop" git_command
+	check_app_insalled "git" git_command
 }

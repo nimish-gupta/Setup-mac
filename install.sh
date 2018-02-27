@@ -1,3 +1,9 @@
+source git_config.sh
+
+echo "*********For installing the apps you have to accept the xcodebuild license*********"
+# Accept the licesne by the xcodebuild
+sudo xcodebuild -license accept
+
 # # install xcode-select
 # xcode-select --install
 
@@ -5,6 +11,10 @@
 # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # brew doctor
 install_git
+if ! [ -z "$emailForSsh" ]
+then
+  setting_git_ssh $emailForSsh
+fi
 
 # # install ruby rvm rails
 # echo "gem: --no-document" >> ~/.gemrc
