@@ -19,10 +19,12 @@ This scripts install the following apps in the mac:
 ### Before installation
 Add the executable permissions to the script
 `chmod +x scripts.sh`
+To create a symlink of the script
+`sudo ln -s "$(pwd)/scripts.sh" /usr/local/bin/setup-mac`
 
 ### Basic Usage
 To install the apps with default settings
-`./scripts.sh`
+`setup-mac`
 
 ### To install the apps with advanced Options
 `./scripts.sh [Options]`
