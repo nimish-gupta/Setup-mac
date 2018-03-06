@@ -9,7 +9,7 @@ beautify() {
   echo "-------$1 installation completed-------"
 }
 
-check_app_insalled() {
+check_brew_app_insalled() {
   isInstalled=$(brew ls --versions "$1")
   if [ -z "$isInstalled" ]
   then
@@ -18,3 +18,12 @@ check_app_insalled() {
     echo "$1 is already installed"
   fi
 }
+
+check_any_app_installed() {
+  if ! [ -x "$(command -v $1)" ]; then
+    beautify $1 $2
+  else
+    echo "$1 is already installed"
+  fi
+}
+
