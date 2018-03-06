@@ -1,25 +1,38 @@
 source help.sh
 source utils.sh
 
-# OPTIND=1
+OPTIND=1
 
-# while getopts hs: opt; do
-# 	case $opt in
-# 		h)
-# 			show_help
-# 			exit 0
-# 			;;
-# 		s)
-#       emailForSsh=$OPTARG
-# 			exit 0
-# 			;;
-# 		*)
-#       echo "Invalid arguments are present"
-# 			show_help 
-# 			exit 1
-# 			;;
-# 	esac
-# done
+install_apps() {
+  echo "******************* Installation starts *******************"
+  source install.sh
+  echo "******************* Installation ends *******************"
+}
 
-source install.sh
+if [ "$#" -ne 1 ]; then
+  install_apps
+else
+  while getopts hs:v opt; do
+    case $opt in
+      h)
+        show_help
+        exit 0
+        ;;
+      s)
+        emailForSsh=$OPTARG
+        install_apps
+        exit 0
+        ;;
+      v)
+        echo "Setup-mac 1.0.0"
+        exit 0
+        ;;
+      *)
+        echo "Invalid arguments are present"
+        show_help 
+        exit 1
+        ;;
+    esac
+  done
+fi
 
