@@ -2,20 +2,23 @@
 These are general scripts to be installed in  the dev environment for a increase in devlopment speed
 This scripts will
   - install the following apps in the mac:
-    * xcode-select
-    * brew
-    * git
-    * ruby rvm rails
-    * wget
-    * chrome
-    * vscode
-    * sublime text
-    * zsh
-    * iterm
-    * vscode extensions
-    * nvm
-    * zsh auto suggestions plugin
-  - accept the license
+    * [xcode-select](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/xcode-select.1.html)
+    * [brew](https://brew.sh/)
+    * [git](https://git-scm.com/)
+    * [ruby](http://www.ruby-lang.org/en/)
+    * [rvm](https://rvm.io/)
+    * [rails](http://rubyonrails.org/)
+    * [wget](https://www.gnu.org/software/wget/)
+    * [chrome](https://www.google.com/chrome/)
+    * [vscode](https://code.visualstudio.com/)
+    * [sublime text](https://www.sublimetext.com/)
+    * [zsh](http://ohmyz.sh/)
+    * [iterm2](https://www.iterm2.com/)
+    * [nvm](https://github.com/creationix/nvm)
+    * [yarn](https://yarnpkg.com/lang/en/)
+    * [node](https://nodejs.org/en/)
+    * [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
+  - accept the xcode license
 
 
 ### How to use the script
