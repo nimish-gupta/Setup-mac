@@ -16,11 +16,17 @@ check_any_app_installed "brew" install_brew
 # installing git
 install_git
 
-# # setting email for the git ssh
-# # if ! [ -z "$emailForSsh" ]
-# # then
-# #   setting_git_ssh $emailForSsh
-# # fi
+# installing yarn
+install_yarn() {
+  brew install yarn
+}
+
+check_any_app_installed "yarn" install_yarn
+setting email for the git ssh
+if ! [ -z "$emailForSsh" ]
+then
+  setting_git_ssh $emailForSsh
+fi
 
 # installing ruby rvm rails
 install_rails() {
@@ -79,20 +85,37 @@ install_zsh() {
 
 check_any_app_installed "zsh" install_zsh
 
-# # # install iterm 
-# # wget https://iterm2.com/downloads/stable/iTerm2-3_1_5.zip
-# # open ~/Downloads/iTerm2-3_1_5.zip.download
-# # open ~/Downloads/iTerm.app
-# # echo plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting) >> ~/.zshrc
-# # alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code" >> ~/.zshrc
+# installing iterm 
+install_iterm() {
+  wget https://iterm2.com/downloads/stable/iTerm2-3_1_5.zip
+  unzip -a iTerm2-3_1_5.zip 
+  rm -rf iTerm2-3_1_5.zip
+  sudo cp -R iTerm.app /Applications/
+  rm -rf iTerm.app
+  printf "\nplugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)" >> ~/.zshrc
+  alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code" >> ~/.zshrc
+  alias iterm="/Applications/iTerm.app/Contents/MacOS/iTerm2">> ~/.zshrc
+}
 
-# # # install vscode extensions  
-# # VSCODE_EXTENSIONS="HookyQR.beautify Rubymaniac.vscode-paste-and-indent alefragnani.project-manager chrisdias.vscodeeditorconfig christian-kohler.npm-intellisense christian-kohler.path-intellisense dbaeumer.vscode-eslint donjayamanne.githistory dsznajder.es7-react-js-snippets eamodio.gitlens eg2.tslint eg2.vscode-npm-script felipecaputo.git-project-manager formulahendry.auto-close-tag formulahendry.auto-rename-tag formulahendry.terminal glen-84.sass-lint joelday.docthis jundat95.react-native-snippet kumar-harsh.graphql-for-vscode michelemelluso.code-beautifier ms-vscode.node-debug2 msjsdiag.debugger-for-chrome naumovs.color-highlight neilding.language-liquid rbbit.typescript-hero robertohuertasm.vscode-icons vangware.light-plus-material vsmobile.vscode-react-native waderyan.gitblame wix.vscode-import-cost"
+check_any_app_installed "iterm" install_iterm
+# installing vscode extensions  
+VSCODE_EXTENSIONS="HookyQR.beautify Rubymaniac.vscode-paste-and-indent alefragnani.project-manager chrisdias.vscodeeditorconfig christian-kohler.npm-intellisense christian-kohler.path-intellisense dbaeumer.vscode-eslint donjayamanne.githistory dsznajder.es7-react-js-snippets eamodio.gitlens eg2.tslint eg2.vscode-npm-script felipecaputo.git-project-manager formulahendry.auto-close-tag formulahendry.auto-rename-tag formulahendry.terminal glen-84.sass-lint joelday.docthis jundat95.react-native-snippet kumar-harsh.graphql-for-vscode michelemelluso.code-beautifier ms-vscode.node-debug2 msjsdiag.debugger-for-chrome naumovs.color-highlight neilding.language-liquid rbbit.typescript-hero robertohuertasm.vscode-icons vangware.light-plus-material vsmobile.vscode-react-native waderyan.gitblame wix.vscode-import-cost"
 
-# # for VSCODE_EXTENSION in $VSCODE_EXTENSIONS
-# # do
-# #  	code --install-extension $VSCODE_EXTENSION
-# # done
+for VSCODE_EXTENSION in $VSCODE_EXTENSIONS
+do
+ 	code --install-extension $VSCODE_EXTENSION
+done
 
-# # # install nvm
-# # wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+# installing nvm
+install_nvm() {
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+}
+
+check_any_app_installed "nvm" install_nvm
+
+# installing heroku
+install_heroku() {
+  brew install heroku/brew/heroku
+}
+
+check_any_app_installed "heroku" install_heroku
