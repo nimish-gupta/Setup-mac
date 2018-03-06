@@ -39,3 +39,5 @@ To install the apps with default settings
   * `-h  help`
   * `-s <git-email>` to create the ssh for the git 
   * `-v  version`
+
+```Note - Apart from the -h and -v flag, script will install all the other apps according to the various flags or default settings ```
