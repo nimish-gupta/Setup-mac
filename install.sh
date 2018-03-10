@@ -119,3 +119,4 @@ install_heroku() {
 }
 
 check_any_app_installed "heroku" install_heroku
+configure_git_config_file

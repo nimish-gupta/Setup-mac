@@ -16,3 +16,35 @@ install_git() {
 	}
 	check_brew_app_insalled "git" git_command
 }
+
+configure_git_config_file() {
+	git_config_command() {
+		git_config_path="./scripts/.gitconfig"
+		echo "Do you want to modify for gitconfig($HOME/.gitconfig) for shortcuts"
+		PS3='Please enter your choice: '
+		options=("Replace" "Create" "Append" "Nothing")
+		select opt in "${options[@]}"
+		do
+			case $opt in
+				"Replace")
+					cp "$git_config_path" "$HOME/.gitconfig"
+					break
+					;;
+				"Create")
+					cp "$git_config_path" "$HOME/.gitconfig"
+					break
+					;;
+				"Append")
+					cat "$git_config_path" >> "$HOME/.gitconfig"
+					break
+					;;
+				"Nothing")
+					break
+					;;
+				*) echo invalid option;;
+			esac
+		done
+	}
+
+	beautify_config "git" git_config_command
+}

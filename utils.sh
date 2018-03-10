@@ -1,3 +1,9 @@
+beautify_config() {
+  echo "-------$1 config starts-------"
+  $2
+  echo "-------$1 config ends-------"
+}
+
 beautify() {
   if [ $# -ne 2 ]
   then
