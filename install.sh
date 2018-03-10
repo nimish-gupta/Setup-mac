@@ -2,7 +2,7 @@ source git_config.sh
 
 echo "*********For installing the apps you have to accept the xcodebuild license*********"
 # Accept the licesne by the xcodebuild
-sudo xcodebuild -license accept
+echo $PASSWORD | sudo -S xcodebuild -license accept
 
 xcode-select --install >/dev/null 2>&1
 
