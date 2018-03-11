@@ -14,7 +14,7 @@ install_git() {
 	git_command() {
 		brew install git
 	}
-	check_brew_app_insalled "git" git_command
+	check_any_app_installed "git" git_command
 }
 
 configure_git_config_file() {

@@ -1,4 +1,5 @@
-source git_config.sh
+echo "************Installing the pre-requisites************"
+source lib/git_config.sh
 
 echo "*********For installing the apps you have to accept the xcodebuild license*********"
 # Accept the licesne by the xcodebuild
@@ -9,14 +10,24 @@ xcode-select --install >/dev/null 2>&1
 # installing brew
 install_brew() {
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew doctor
 }
 check_any_app_installed "brew" install_brew
+
+# installing dialog
+install_dialog() {
+  brew install dialog
+}
+
+check_any_app_installed "dialog" install_dialog
+
+echo "************Pre-requisites installed************"
+source lib/multiselect.sh
+select_apps
 
 # installing git
 install_git
 
-# installing yarn
+installing yarn
 install_yarn() {
   brew install yarn
 }
