@@ -4,7 +4,11 @@ source lib/utils.sh
 OPTIND=1
 
 install_apps() {
+  echo "Please enter the password to be accessed by the apps"
+  echo "Password:"
+  read -s PASSWORD
   echo "******************* Installation starts *******************"
+  
   source lib/install.sh
   echo "******************* Installation ends *******************"
 }
