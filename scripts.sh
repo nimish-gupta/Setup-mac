@@ -24,7 +24,7 @@ else
         exit 0
         ;;
       v)
-        echo "Setup-mac 1.0.0"
+        echo "Setup-mac 2.0.0"
         exit 0
         ;;
       *)

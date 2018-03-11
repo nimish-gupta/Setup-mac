@@ -20,7 +20,7 @@ install_dialog() {
 
 check_any_app_installed "dialog" install_dialog
 
-echo "************Pre-requisites installed************"
+# echo "************Pre-requisites installed************"
 source lib/multiselect.sh
 select_apps
 
@@ -109,7 +109,8 @@ install_iterm() {
 }
 
 check_any_app_installed "iterm" install_iterm
-# installing vscode extensions  
+# installing vscode extensions
+select_vscode_extensions 
 VSCODE_EXTENSIONS="HookyQR.beautify Rubymaniac.vscode-paste-and-indent alefragnani.project-manager chrisdias.vscodeeditorconfig christian-kohler.npm-intellisense christian-kohler.path-intellisense dbaeumer.vscode-eslint donjayamanne.githistory dsznajder.es7-react-js-snippets eamodio.gitlens eg2.tslint eg2.vscode-npm-script felipecaputo.git-project-manager formulahendry.auto-close-tag formulahendry.auto-rename-tag formulahendry.terminal glen-84.sass-lint joelday.docthis jundat95.react-native-snippet kumar-harsh.graphql-for-vscode michelemelluso.code-beautifier ms-vscode.node-debug2 msjsdiag.debugger-for-chrome naumovs.color-highlight neilding.language-liquid rbbit.typescript-hero robertohuertasm.vscode-icons vangware.light-plus-material vsmobile.vscode-react-native waderyan.gitblame wix.vscode-import-cost"
 
 for VSCODE_EXTENSION in $VSCODE_EXTENSIONS
